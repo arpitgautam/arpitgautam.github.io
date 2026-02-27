@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Foundation — Software Engineer · Arpit Gautam</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="chapter.css" />
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <nav aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">AG<span class="logo-dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#journey">Journey</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Let's talk</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <section class="chapter-hero">
+      <div class="container">
+        <a href="index.html#journey" class="chapter-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to journey
+        </a>
+        <span class="chapter-tag">Foundation</span>
+        <h1 class="chapter-title">Software Engineer</h1>
+        <p class="chapter-subtitle">Where it all started — learning to write code that ships.</p>
+      </div>
+    </section>
+
+    <section class="chapter-body">
+      <div class="container chapter-grid">
+
+        <aside class="chapter-meta">
+          <div class="meta-block">
+            <span class="meta-label">Chapter</span>
+            <span class="meta-value">01 / 05</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">Stage</span>
+            <span class="meta-value">Foundation</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">Location</span>
+            <span class="meta-value">India 🇮🇳</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">Stack</span>
+            <span class="meta-value">C++, MFC, Win32</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">Other Skills Gained</span>
+            <span class="meta-value">Cold Calling, Sales, Presales, IT</span>
+          </div>
+        </aside>
+
+        <div class="chapter-content">
+          <h2>The Beginning</h2>
+          <p>
+            My career began at a small Indian software company where I worked extensively with C++ and MFC (Microsoft Foundation Classes), which were widely used for Windows desktop development at the time. It was an environment where developers owned problems end-to-end — from diagnosing crash reports to delivering the final fix in production.
+          </p>
+          <p>
+            Working directly with the Win32 APIs gave me a deep understanding of how systems function beneath higher-level abstractions. Memory management, message loops, and handle lifetimes were things you had to get right yourself — there was no framework to shield you from mistakes.
+          </p>
+          <p class="callout">
+            Beyond development, I worked closely with pre-sales, customer support, and the company's CEO. I helped lead hardware procurement, selected RFID tags and related equipment, prepared technical proposals, and implemented library automation systems for clients. This role required not only building the software but also understanding the full operational environment in which it would run.
+          </p>
+
+          <h2>What I Created</h2>
+          <ul class="chapter-list">
+            <li>A fully customizable digital index card system for online library platforms, allowing libraries to structure and display catalog metadata according to their needs.</li>
+            <li>A report generation and report-design module, enabling users to create, customize, and export operational and catalog reports from the system.</li>
+          </ul>
+
+          <h2>What I Learned</h2>
+          <p>
+            This chapter was about fundamentals: writing code that is correct before it is clever, reading someone else's code before touching it, and understanding that software lives or dies by the edge cases no one thought about.
+          </p>
+          <p>
+            The discipline of C++ — strict types, deterministic destruction, zero hidden costs — shaped how I think about software to this day, even when working in higher-level languages.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="chapter-nav container">
+      <span class="chapter-nav-prev"></span>
+      <a href="senior-engineer.html" class="chapter-nav-next">
+        Next: Senior Engineer
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 Arpit Gautam</p>
+      <p class="footer-note">Built with plain HTML & CSS — no frameworks, no fuss.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.chapter-hero, .chapter-content h2, .chapter-content p').forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    });
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.chapter-hero, .chapter-content h2, .chapter-content p').forEach((el, i) => {
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, i * 80);
+      });
+    });
+  </script>
+
+</body>
+</html>

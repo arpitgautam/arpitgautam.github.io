@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Leadership — Staff Engineer · Arpit Gautam</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="chapter.css" />
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <nav aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">AG<span class="logo-dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#journey">Journey</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Let's talk</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="chapter-hero">
+      <div class="container">
+        <a href="index.html#journey" class="chapter-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to journey
+        </a>
+        <span class="chapter-tag">Leadership</span>
+        <h1 class="chapter-title">Staff Engineer</h1>
+        <p class="chapter-subtitle">Enterprise scale — postage hardware, Java services, and cross-team technical leadership.</p>
+      </div>
+    </section>
+
+    <section class="chapter-body">
+      <div class="container chapter-grid">
+
+        <aside class="chapter-meta">
+          <div class="meta-block">
+            <span class="meta-label">Chapter</span>
+            <span class="meta-value">03 / 05</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">Stage</span>
+            <span class="meta-value">Leadership</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">Location</span>
+            <span class="meta-value">India 🇮🇳</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">Stack</span>
+            <span class="meta-value">Qt, Java, C++, Integration</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">Other Skills Gained</span>
+            <span class="meta-value">Scrum, Cross-Platform Development, Test-Driven Development, Distributed Team Collaboration, Global-Scale Software Design</span>
+          </div>
+        </aside>
+
+        <div class="chapter-content">
+          <h2>Enterprise Scale, Chapter One</h2>
+          <p>
+            This chapter brought me into the world of postage hardware — shipping physical printers that had to work reliably in high-volume mailing environments. The stack was Qt for the desktop client and C++ at the core, integrating tightly with printer firmware and proprietary hardware interfaces.
+          </p>
+          <p>
+            On the services side, Java handled postage label generation — producing correct, compliant labels at scale with strict formatting rules set by postal authorities. Getting those rules wrong meant real business impact for customers.
+          </p>
+
+          <h2>What I Created</h2>
+          <ul class="chapter-list">
+            <li>An envelope customisation module that gave customers direct control over print layouts, branding, and formatting from within the desktop client</li>
+            <li>A cross-product update protocol that coordinated reliable software rollouts across an entire line of postage hardware devices — keeping the suite consistent without manual intervention</li>
+            <li>A web service for designing and generating compliant postage labels tailored for e-commerce fulfilment, built to meet strict postal authority specifications at scale</li>
+          </ul>
+
+          <h2>What I Learned</h2>
+          <p class="callout">
+            Communication discipline matters more than communication volume. Async-first thinking, precise written specs, and deliberate handoff rituals become the foundation of a high-functioning distributed team — not heroics or long hours.
+          </p>
+          <p>
+            Designing for global scale added a new architectural dimension. Software that must remain correct and compliant across different postal regulations, locales, and infrastructure environments demands a rigour that local-market products simply don't. That pressure sharpened how I think about boundaries, contracts, and the assumptions baked into every system.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="chapter-nav container">
+      <a href="senior-engineer.html" class="chapter-nav-prev">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Previous: Senior Engineer
+      </a>
+      <a href="senior-architect.html" class="chapter-nav-next">
+        Next: Senior Architect
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 Arpit Gautam</p>
+      <p class="footer-note">Built with plain HTML & CSS — no frameworks, no fuss.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.chapter-hero, .chapter-content h2, .chapter-content p').forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    });
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.chapter-hero, .chapter-content h2, .chapter-content p').forEach((el, i) => {
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, i * 80);
+      });
+    });
+  </script>
+
+</body>
+</html>
