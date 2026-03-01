@@ -31,6 +31,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -754,10 +755,12 @@ section + section {
 
 @media (max-width: 600px) {
   .stats-inner {
-    gap: 1.5rem;
+    gap: 1.25rem 0;
+    flex-wrap: wrap;
   }
   .stat-item {
-    padding: 0 1.5rem;
+    flex-basis: 50%;
+    padding: 0.5rem 0;
   }
   .stat-divider {
     display: none;
@@ -1110,8 +1113,25 @@ footer {
     --section-gap: 5rem;
   }
 
+  .nav-inner {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .nav-logo-role {
+    display: none;
+  }
+
   .nav-links {
-    gap: 1.25rem;
+    width: 100%;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
   }
 
   #hero {
