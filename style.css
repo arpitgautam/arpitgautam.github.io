@@ -1107,6 +1107,13 @@ footer {
   letter-spacing: 0.02em;
 }
 
+.footer-version {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+}
+
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 600px) {
   :root {
