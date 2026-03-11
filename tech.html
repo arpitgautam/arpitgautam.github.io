@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Tech Stack · Arpit Gautam</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css?v=1.2" />
+  <style>
+    /* ── Tech page specific ──────────────────────────────────── */
+    .tech-hero {
+      padding: 7rem 0 4rem;
+    }
+
+    .tech-back {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--color-muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+
+    .tech-back:hover {
+      color: var(--color-accent);
+    }
+
+    .tech-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      border: 1px solid var(--color-accent);
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      color: var(--color-text);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .tech-subtitle {
+      font-size: 1.1rem;
+      color: var(--color-muted);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ── Category sections ───────────────────────────────────── */
+    .tech-body {
+      padding: 3rem 0 5rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .tech-categories {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    .tech-category {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .tech-category.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .category-icon {
+      font-size: 1.15rem;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .category-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+
+    .category-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--color-text);
+      font-weight: 400;
+    }
+
+    .category-line {
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+      margin-left: 0.5rem;
+    }
+
+    /* ── Tech pills ──────────────────────────────────────────── */
+    .tech-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tech-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      color: var(--color-text);
+      letter-spacing: 0.01em;
+      transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+      cursor: default;
+    }
+
+    .tech-pill:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+      color: var(--color-accent);
+    }
+
+    /* ── Count badge ─────────────────────────────────────────── */
+    .tech-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-dim);
+      letter-spacing: 0.04em;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .tech-count-number {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--color-accent);
+    }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .tech-hero {
+        padding: 5rem 0 3rem;
+      }
+
+      .tech-pills {
+        gap: 0.5rem;
+      }
+
+      .tech-pill {
+        font-size: 0.82rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .category-line {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <nav aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="profilePic.jpeg" alt="Arpit Gautam" class="nav-avatar" />
+        <span class="nav-logo-text">
+          <span class="nav-logo-name">Arpit Gautam</span>
+          <span class="nav-logo-role">Senior Engineer @ Zalando</span>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="journey.html">Journey</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="https://www.linkedin.com/in/arpitgautam/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">Recommendations</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Let's talk</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero ──────────────────────────────────────────────── -->
+    <section class="tech-hero">
+      <div class="container">
+        <a href="index.html" class="tech-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to home
+        </a>
+        <span class="tech-tag">Toolbox</span>
+        <h1 class="tech-title">Tech Stack</h1>
+        <p class="tech-subtitle">Languages, frameworks, infrastructure, and practices I've worked with across two decades of building software.</p>
+      </div>
+    </section>
+
+    <!-- ── Body ──────────────────────────────────────────────── -->
+    <section class="tech-body">
+      <div class="container">
+        <div class="tech-categories">
+
+          <!-- Languages -->
+          <div class="tech-category">
+            <div class="category-header">
+              <div class="category-icon">⌨️</div>
+              <div>
+                <span class="category-label">Core</span>
+                <h2 class="category-name">Languages</h2>
+              </div>
+              <div class="category-line"></div>
+            </div>
+            <div class="tech-pills">
+              <span class="tech-pill">Java</span>
+              <span class="tech-pill">Kotlin</span>
+              <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">C++</span>
+              <span class="tech-pill">C</span>
+              <span class="tech-pill">SQL</span>
+              <span class="tech-pill">Dart</span>
+            </div>
+          </div>
+
+          <!-- Frameworks & Libraries -->
+          <div class="tech-category">
+            <div class="category-header">
+              <div class="category-icon">🧩</div>
+              <div>
+                <span class="category-label">Building with</span>
+                <h2 class="category-name">Frameworks &amp; Libraries</h2>
+              </div>
+              <div class="category-line"></div>
+            </div>
+            <div class="tech-pills">
+              <span class="tech-pill">Spring</span>
+              <span class="tech-pill">Spring Boot</span>
+              <span class="tech-pill">Hibernate</span>
+              <span class="tech-pill">Node.js</span>
+              <span class="tech-pill">AngularJS</span>
+              <span class="tech-pill">jQuery</span>
+              <span class="tech-pill">MFC</span>
+              <span class="tech-pill">Qt</span>
+              <span class="tech-pill">Apache Camel</span>
+              <span class="tech-pill">Apache FOP</span>
+            </div>
+          </div>
+
+          <!-- Infrastructure & DevOps -->
+          <div class="tech-category">
+            <div class="category-header">
+              <div class="category-icon">☁️</div>
+              <div>
+                <span class="category-label">Running on</span>
+                <h2 class="category-name">Infrastructure &amp; DevOps</h2>
+              </div>
+              <div class="category-line"></div>
+            </div>
+            <div class="tech-pills">
+              <span class="tech-pill">AWS</span>
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">Kubernetes</span>
+              <span class="tech-pill">Kafka</span>
+              <span class="tech-pill">ActiveMQ</span>
+              <span class="tech-pill">Tomcat</span>
+              <span class="tech-pill">JBoss EAP</span>
+            </div>
+          </div>
+
+          <!-- Architecture & Practices -->
+          <div class="tech-category">
+            <div class="category-header">
+              <div class="category-icon">📐</div>
+              <div>
+                <span class="category-label">Thinking in</span>
+                <h2 class="category-name">Architecture &amp; Practices</h2>
+              </div>
+              <div class="category-line"></div>
+            </div>
+            <div class="tech-pills">
+              <span class="tech-pill">Software Architecture</span>
+              <span class="tech-pill">System Design</span>
+              <span class="tech-pill">Domain-Driven Design (DDD)</span>
+              <span class="tech-pill">Event-Driven Architecture</span>
+              <span class="tech-pill">API Design</span>
+              <span class="tech-pill">Microservices</span>
+              <span class="tech-pill">REST</span>
+              <span class="tech-pill">Enterprise Integration Patterns</span>
+              <span class="tech-pill">Design Patterns</span>
+              <span class="tech-pill">OOAD</span>
+              <span class="tech-pill">TDD</span>
+              <span class="tech-pill">Data Structures &amp; Algorithms</span>
+              <span class="tech-pill">UML</span>
+              <span class="tech-pill">Architecture Decision Records (ADRs)</span>
+              <span class="tech-pill">Non-Functional Requirements</span>
+              <span class="tech-pill">Technical Leadership</span>
+              <span class="tech-pill">Stakeholder Communication</span>
+              <span class="tech-pill">Technical Roadmapping</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Count -->
+        <div class="tech-count">
+          <span class="tech-count-number">40+</span> technologies across languages, frameworks, infrastructure, and practices
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 Arpit Gautam</p>
+      <p class="footer-version">v1.2</p>
+    </div>
+  </footer>
+
+  <!-- ── Scroll animation (same pattern as rest of site) ───── -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.tech-category').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.1}s`;
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
